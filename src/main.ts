@@ -47,19 +47,23 @@ searchBtn.addEventListener("click", async (event) => {
       const container = document.getElementById("showHero");
       if (container) {
         container.innerHTML = "";
-        data.results.forEach((hero: Hero) => {
-          container.innerHTML += `
-          <h2>${hero.name}</h2>
-          <img src="${hero.image.url}" />
-          <p>Full Name: ${hero.biography.fullName}</p>
-          <p>Intelligence: ${hero.powerstats.intelligence}</p>
-          <p>Strength: ${hero.powerstats.strength}</p>
-          <p>Speed: ${hero.powerstats.speed}</p>
-          <p>Durability: ${hero.powerstats.durability}</p>
-          <p>Power: ${hero.powerstats.power}</p>
-          <p>Combat: ${hero.powerstats.combat}</p>
-          `;
-        });
+        if (data.results && data.results.length > 0) {
+          data.results.forEach((hero: Hero) => {
+            container.innerHTML += `
+            <h2>${hero.name}</h2>
+            <img src="${hero.image.url}" />
+            <p>Full Name: ${hero.biography.fullName}</p>
+            <p>Intelligence: ${hero.powerstats.intelligence}</p>
+            <p>Strength: ${hero.powerstats.strength}</p>
+            <p>Speed: ${hero.powerstats.speed}</p>
+            <p>Durability: ${hero.powerstats.durability}</p>
+            <p>Power: ${hero.powerstats.power}</p>
+            <p>Combat: ${hero.powerstats.combat}</p>
+            `;
+          });
+        } else {
+          container.innerHTML = "No heroes found.";
+        }
       }
     } catch (e) {
       console.error(e);
