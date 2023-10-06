@@ -1,11 +1,6 @@
 import "./style.css";
-import * as dotenv from "dotenv";
 import axios from "axios";
 
-dotenv.config();
-
-const apikey = process.env.SUPERHERO_TOKEN;
-const url: string = "https://www.superheroapi.com/api/";
 const searchBtn = document.getElementById("searchBtn") as HTMLButtonElement;
 
 interface ApiResponse {
@@ -38,18 +33,6 @@ interface Image {
   url: string;
 }
 
-const getHeroInfo = async (name: string) => {
-  try {
-    const response = await axios.get<ApiResponse>(
-      `${url}${apikey}/search/${name}`
-    );
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
 searchBtn.addEventListener("click", async (event) => {
   event.preventDefault();
   const searchField = document.getElementById(
@@ -58,7 +41,9 @@ searchBtn.addEventListener("click", async (event) => {
   const searchedName = searchField?.value;
   if (searchedName) {
     try {
-      const data = await getHeroInfo(searchedName);
+      const apiUrl = "/api/heroes"; // Updated URL
+      const response = await axios.get(`${apiUrl}?name=${searchedName}`);
+      const data: ApiResponse = response.data;
       const container = document.getElementById("showHero");
       if (container) {
         container.innerHTML = "";
