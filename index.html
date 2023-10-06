@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuperHero Dex</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Super Hero Dex</h1>
+      <div id="searchBar">
+        <form class="example">
+          <input
+            type="text"
+            placeholder="Search for a Hero"
+            name="search"
+            id="searchField"
+          />
+          <button type="submit" id="searchBtn">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div id="showHero"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
