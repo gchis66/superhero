@@ -2,7 +2,7 @@ import "./style.css";
 import * as dotenv from "dotenv";
 import axios from "axios";
 
-//dotenv.config();
+dotenv.config();
 
 const apikey = process.env.SUPERHERO_TOKEN;
 const url: string = "https://www.superheroapi.com/api/";
