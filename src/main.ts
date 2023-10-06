@@ -26,7 +26,7 @@ interface PowerStats {
 }
 
 interface Biography {
-  fullName: string;
+  "full-name": string;
 }
 
 interface Image {
@@ -52,7 +52,7 @@ searchBtn.addEventListener("click", async (event) => {
             container.innerHTML += `
             <h2>${hero.name}</h2>
             <img src="${hero.image.url}" />
-            <p>Full Name: ${hero.biography.fullName}</p>
+            <p>Full Name: ${hero.biography["full-name"]}</p>
             <p>Intelligence: ${hero.powerstats.intelligence}</p>
             <p>Strength: ${hero.powerstats.strength}</p>
             <p>Speed: ${hero.powerstats.speed}</p>
