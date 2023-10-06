@@ -8,6 +8,8 @@ export default async (req, res) => {
   const { name } = req.query;
   const apiKey = process.env.SUPERHERO_API_KEY; // Replace with your API key
 
+  console.log(`Searching for hero: ${name}`); // Add this line for debugging
+
   try {
     const response = await axios.get(
       `https://www.superheroapi.com/api/${apiKey}/search/${name}`
