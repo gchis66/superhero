@@ -53,12 +53,12 @@ searchBtn.addEventListener("click", async (event) => {
             <h2>${hero.name}</h2>
             <img src="${hero.image.url}" />
             <p>Full Name: ${hero.biography["full-name"]}</p>
-            <p>Intelligence: ${hero.powerstats.intelligence}</p>
-            <p>Strength: ${hero.powerstats.strength}</p>
-            <p>Speed: ${hero.powerstats.speed}</p>
-            <p>Durability: ${hero.powerstats.durability}</p>
-            <p>Power: ${hero.powerstats.power}</p>
-            <p>Combat: ${hero.powerstats.combat}</p>
+            <p>Intelligence: ${hero.powerstats.intelligence}/100</p>
+            <p>Strength: ${hero.powerstats.strength}/100</p>
+            <p>Speed: ${hero.powerstats.speed}/100</p>
+            <p>Durability: ${hero.powerstats.durability}/100</p>
+            <p>Power: ${hero.powerstats.power}/100</p>
+            <p>Combat: ${hero.powerstats.combat}/100</p>
             `;
           });
         } else {
